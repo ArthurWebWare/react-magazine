@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>sadfsdfsdf</h1>
+
       </div>
   );
   }
