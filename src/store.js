@@ -1,19 +1,11 @@
 // Здесь создается хранилище кому будет передоваться компонент
 import {createStore, applyMiddleware} from 'redux' ;
 import logger from 'redux-logger' ;
+// для того чтобы все reduser объединялись в один и возвращали сосотояние
+import rootReducer from './reducers';
 
-function reducer(state = [], action) {
-  return state;
-};
-
-const create = () => {
-  const store = createStore(reducer, applyMiddleware(logger));
+//Метод который будет создавать хранилище и возвращать нам
+export default () => {
+  const store = createStore(rootReducer, applyMiddleware(logger));
   return store;
 };
-
-const store = create();
-
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Read the docs'
-});
